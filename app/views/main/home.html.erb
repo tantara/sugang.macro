@@ -1,0 +1,37 @@
+<%= javascript_include_tag "gocr" %>
+<%= javascript_include_tag "webfont" %>
+
+<div class="jumbotron">
+  <h2>Number Recognition</h2>
+  <p class="lead">Draw characters or drag and drop an image</p>
+  <p id="output"></p>
+  <canvas id="c" width="570" height="285"></canvas>
+  <p>
+  <a id="clear" class="btn btn-lg btn-warning" role="button" onclick="reset_canvas()" data-toggle="tooltip" title="clear canvas">×</a>
+  <a id="word" class="btn btn-lg btn-success" role="button" onclick="da_word()" data-toggle="tooltip" title="load other text">&#8635;</a>
+  <a id="word" class="btn btn-lg btn-primary" role="button" onclick="da_image()" data-toggle="tooltip" title="load other image">&#8635;</a>
+  </p>
+
+  <p class="well well-sm text-center">
+  <span id="text">Welcome to the Number Recognition Demo!<br></span>
+  <span id="timing">recognition took 0.55s</span>
+  </p>
+</div>
+
+
+<p class="alert alert-info" style="cursor: pointer" onclick="open_picker()">
+You can also <strong>drag and drop</strong> an image<small>(JPEG, PNG, GIF, BMP, SVG, or NetPBM)</small> to feed into the text recognizer.
+</p>
+<input type="file" style="position:absolute; top: -100px" id="picker" onchange="picked_file(this.files[0])">
+
+<div class="panel panel-default">
+  <div class="panel-heading">Reference</div>
+  <div class="panel-body">
+    <ul>
+      <li>OCR JS Library : <%= link_to "GOCR.js", "http://antimatter15.github.io/gocr.js/demo.html", :target => "_blank" %></li>
+      <li>Number Image : <%= link_to "sugang.snu.ac.kr", "http://sugang.snu.ac.kr/sugang/cc/cc100.action", :target => "_blank" %></li>
+    </ul>
+  </div>
+</div>
+
+<%= javascript_include_tag "main" %>

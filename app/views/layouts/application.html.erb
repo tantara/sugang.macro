@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SugangApp</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><%= link_to "Home", root_path %></li>
+          <li><%= link_to_function "About", "alert('Number Recognition')" %></li>
+          <li><%= link_to_function "Contact", "alert('mail to : tantara@snu.ac.kr')" %></li>
+        </ul>
+        <h3 class="text-muted">Number Recognition</h3>
+      </div>
+
+      <%= yield %>
+
+      <div class="footer">
+        <p>&copy; <%= link_to "tantara", "http://tantara.me", :target => "_blank" %> 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+  </body>
+</html>
