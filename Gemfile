@@ -47,3 +47,5 @@ end
 #
 gem 'thin'
 gem 'bootstrap-sass-rails'
+gem 'devise'
+gem 'rails_admin'
